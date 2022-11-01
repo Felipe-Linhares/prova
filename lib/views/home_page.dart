@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prova/components/home_components.dart';
+import 'package:prova/views/news.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -67,7 +68,26 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               )
             ],
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: SizedBox(
+              width: 100,
+              height: 100,
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => const News(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    'Next',
+                    style: TextStyle(fontSize: 30),
+                  )),
+            ),
+          ),
         ]),
       ),
     );
